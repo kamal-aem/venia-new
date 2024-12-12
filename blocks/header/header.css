@@ -19,6 +19,8 @@ header nav {
   height: var(--nav-height);
   padding: 0 24px;
   font-family: var(--body-font-family);
+  border-bottom: 1px solid #d1d5db;
+  margin-bottom: 10px;
 }
 
 header nav[aria-expanded='true'] {
@@ -30,12 +32,12 @@ header nav[aria-expanded='true'] {
   min-height: 100dvh;
 }
 
-@media (width >= 900px) {
+@media (width >= 1200px) {
   header nav {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    max-width: 1264px;
+    max-width: 100%;
     padding: 0 32px;
   }
 
@@ -128,7 +130,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
-@media (width >= 900px) {
+@media (width >= 1200px) {
   header nav .nav-hamburger {
     display: none;
     visibility: hidden;
@@ -142,6 +144,10 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+}
+
+header nav .nav-brand > div {
+  text-align: center;
 }
 
 header nav .nav-brand img {
@@ -181,7 +187,11 @@ header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
 }
 
-@media (width >= 900px) {
+@media (width >= 1200px) {
+  header nav .nav-brand > div {
+    text-align: left;
+  }
+
   header nav .nav-sections {
     display: block;
     visibility: visible;
@@ -192,8 +202,12 @@ header nav .nav-sections ul > li > ul > li {
     align-self: unset;
   }
 
+  header nav[aria-expanded='true'] .nav-sections > div {
+    display: flex;
+    justify-content: center;
+  }
+
   header nav .nav-sections .nav-drop {
-    position: relative;
     padding-right: 16px;
     cursor: pointer;
   }
@@ -201,9 +215,6 @@ header nav .nav-sections ul > li > ul > li {
   header nav .nav-sections .nav-drop::after {
     content: '';
     display: inline-block;
-    position: absolute;
-    top: 0.5em;
-    right: 2px;
     transform: rotate(135deg);
     width: 6px;
     height: 6px;
@@ -226,7 +237,9 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections .default-content-wrapper > ul > li {
     flex: 0 1 auto;
-    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -235,14 +248,17 @@ header nav .nav-sections ul > li > ul > li {
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
-    display: block;
     position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
+    top: 66px;
+    left: 0;
+    width: 100%;
     padding: 16px;
-    background-color: var(--light-color);
-    white-space: initial;
+    background-color: #fff;
+    box-shadow: 0 2px 7px #ddd;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
@@ -265,4 +281,40 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+header nav .nav-tools > div {
+  display: flex;
+  align-items: center;
+  column-gap: .8rem;
+}
+
+header nav .nav-tools > div p {
+  display: flex;
+  align-items: center;
+  column-gap: .2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+@media (width <= 720px) {
+  header nav .nav-tools > div p:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (width <= 1199px) {
+  header nav .nav-sections {
+    width: 100%;
+  }
+
+  header nav .nav-sections > div > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  header nav .nav-sections > div > ul li {
+    width: 300px;
+  }
 }
