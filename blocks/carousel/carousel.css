@@ -151,6 +151,10 @@
 }
 
 @media (width >= 400px) {
+  main {
+    padding: 0;
+  }
+
   .carousel .carousel-slide {
     max-height: 70vw;
   }
@@ -165,6 +169,10 @@
 }
 
 @media (width >= 600px) {
+  main {
+    padding: 0 10px;
+  }
+
   .carousel .carousel-navigation-buttons {
     left: 24px;
     right: 24px;
@@ -175,9 +183,9 @@
   }
 
   .carousel .carousel-slide .carousel-slide-content {
-    --slide-content-width: calc((100% - 184px) / 1.5);
+    --slide-content-width: calc((100% - 184px) / 1);
 
-    margin: 92px;
+    margin: 50px;
   }
 
   .carousel .carousel-slide .carousel-slide-content h2 {
@@ -190,6 +198,10 @@
 }
 
 @media (width >= 900px) {
+  main {
+    padding: 0 30px;
+  }
+
   .carousel .carousel-slide .carousel-slide-content h2 {
     font-size: 46px;
   }
