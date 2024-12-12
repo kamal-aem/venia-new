@@ -60,9 +60,27 @@
   display: block;
 }
 
+@media (width >= 400px) {
+  .columns > div > div:first-child {
+    padding: 0 5px;
+  }
+
+  .columns > div > div:first-child p {
+    padding: 0;
+  }
+}
+
 @media (width >= 600px) {
+  .columns > div > div:first-child {
+    padding: 0 60px;
+  }
+
   .columns > div > div:first-child h2 {
     font-size: 45px;
+  }
+
+  .columns > div > div:first-child p {
+    padding: 0 30px;
   }
 
   .columns > div:nth-child(2) > div:last-child {
